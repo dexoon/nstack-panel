@@ -1,0 +1,39 @@
+name: build-nstack-panel
+
+on:
+  push:
+    branches: [nstack]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [self-hosted, nstack-panel]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Build frontend (bun + vite)
+        run: |
+          export PATH="$HOME/src/toolchain/node26/bin:$HOME/.bun/bin:$PATH"
+          cd frontend
+          bun install
+          bun run build
+
+      - name: Build panel (go, plain)
+        run: |
+          export PATH="$HOME/src/toolchain/go/bin:$PATH"
+          go build -trimpath -ldflags "-s -w" -o nstack .
+          ls -la nstack
+
+      - name: Brand-leak check
+        run: |
+          c=$(strings nstack | grep -ciE 'x-ui|3x-ui|MHSanaei|X-UI' || true)
+          echo "brand-leak strings: $c"
+          test "$c" -eq 0
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nstack
+          path: nstack
+          retention-days: 3
+          if-no-files-found: error
