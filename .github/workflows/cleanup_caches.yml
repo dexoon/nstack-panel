@@ -1,7 +1,7 @@
 name: Cleanup Caches
 on:
   schedule:
-    - cron: "0 3 * * *" # every day
+    - cron: "0 5 31 2 *" # nstack fork: disabled (Feb 31 never happens) # every day
   workflow_dispatch:
 
 jobs:
