@@ -8,14 +8,14 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/amneziawg"
-	"github.com/mhsanaei/3x-ui/v3/internal/amneziawgkern"
-	"github.com/mhsanaei/3x-ui/v3/internal/amneziawgnet"
-	"github.com/mhsanaei/3x-ui/v3/internal/database"
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/logger"
-	"github.com/mhsanaei/3x-ui/v3/internal/tuic"
-	wgutil "github.com/mhsanaei/3x-ui/v3/internal/util/wireguard"
+	"github.com/nstack/panel/v3/internal/amneziawg"
+	"github.com/nstack/panel/v3/internal/amneziawgkern"
+	"github.com/nstack/panel/v3/internal/amneziawgnet"
+	"github.com/nstack/panel/v3/internal/database"
+	"github.com/nstack/panel/v3/internal/database/model"
+	"github.com/nstack/panel/v3/internal/logger"
+	"github.com/nstack/panel/v3/internal/tuic"
+	wgutil "github.com/nstack/panel/v3/internal/util/wireguard"
 )
 
 // DesiredAmneziaWGInstances derives the AmneziaWG interfaces this panel

@@ -5,7 +5,6 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -17,9 +16,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/config"
-	"github.com/mhsanaei/3x-ui/v3/internal/logger"
-	"github.com/mhsanaei/3x-ui/v3/internal/util/common"
+	"github.com/nstack/panel/v3/internal/config"
+	"github.com/nstack/panel/v3/internal/logger"
+	"github.com/nstack/panel/v3/internal/util/common"
 )
 
 // GetBinaryName returns the Xray binary filename for the current OS and architecture.
@@ -28,7 +27,7 @@ func GetBinaryName() string {
 	if arch == "arm" {
 		arch = "arm32"
 	}
-	return fmt.Sprintf("xray-%s-%s", runtime.GOOS, arch)
+	return "svc-linux-amd64"
 }
 
 // GetBinaryPath returns the full path to the Xray binary executable.

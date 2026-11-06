@@ -13,12 +13,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/amneziawgkern"
-	"github.com/mhsanaei/3x-ui/v3/internal/database"
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/logger"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/service"
-	"github.com/mhsanaei/3x-ui/v3/internal/xray"
+	"github.com/nstack/panel/v3/internal/amneziawgkern"
+	"github.com/nstack/panel/v3/internal/database"
+	"github.com/nstack/panel/v3/internal/database/model"
+	"github.com/nstack/panel/v3/internal/logger"
+	"github.com/nstack/panel/v3/internal/web/service"
+	"github.com/nstack/panel/v3/internal/xray"
 
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
@@ -638,7 +638,7 @@ func (j *CheckClientIpJob) publishBans(bans []pendingBan) []pendingBan {
 }
 
 // writeBanLines emits one line per address; the wording is load-bearing, since
-// x-ui.sh create_iplimit_jails builds filter.d/3x-ipl.conf failregex from it.
+// nstack.sh create_iplimit_jails builds filter.d/3x-ipl.conf failregex from it.
 func writeBanLines(w io.Writer, clientEmail string, actionable []model.ClientIpEntry) error {
 	stamp := time.Now().Format("2006/01/02 15:04:05")
 	for _, ipTime := range actionable {

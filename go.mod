@@ -1,4 +1,4 @@
-module github.com/mhsanaei/3x-ui/v3
+module github.com/nstack/panel/v3
 
 go 1.27.3
 
@@ -18,6 +18,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/klauspost/compress v1.20.3
 	github.com/mattn/go-sqlite3 v1.14.52
+	github.com/mhsanaei/3x-ui/v3 v3.11.0
 	github.com/mymmrac/telego v1.12.1
 	github.com/nicksnyder/go-i18n/v2 v2.6.1
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7

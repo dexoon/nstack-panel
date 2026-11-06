@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
+	"github.com/nstack/panel/v3/internal/database/model"
 )
 
 func validateClientKeepAlive(protocol model.Protocol, client model.Client) error {

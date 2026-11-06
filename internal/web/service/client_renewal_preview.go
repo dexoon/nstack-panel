@@ -3,9 +3,9 @@ package service
 import (
 	"time"
 
-	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
-	"github.com/mhsanaei/3x-ui/v3/internal/util/common"
-	"github.com/mhsanaei/3x-ui/v3/internal/xray"
+	"github.com/nstack/panel/v3/internal/database/model"
+	"github.com/nstack/panel/v3/internal/util/common"
+	"github.com/nstack/panel/v3/internal/xray"
 )
 
 type ClientRenewalPreviewRequest struct {
