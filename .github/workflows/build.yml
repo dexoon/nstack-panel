@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Build frontend (bun + vite)
+      - name: Build frontend (node + npm)
         run: |
-          export PATH="$HOME/src/toolchain/node26/bin:$HOME/.bun/bin:$PATH"
+          export PATH="$HOME/src/toolchain/node26/bin:$PATH"
           cd frontend
-          bun install
-          bun run build
+          npm ci
+          npm run build
 
       - name: Build panel (go, plain)
         run: |
